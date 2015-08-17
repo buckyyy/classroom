@@ -1,0 +1,31 @@
+<%if notice != nil %>
+
+<p id="notice" class="alert alert-success" role="alert">
+      <%= notice %>
+    </p>
+  <% end %>
+
+<h1>Student Entrants</h1>
+
+  <div class="row">
+    <% @students.each do |student| %>
+      <div class="col-md-4">
+       <div class="panel panel-default">
+        <div class="panel-body">
+         <h4><%= student.name %></h4>
+         <h3><%= student.age %></h3>
+         <h1><%= student.grade %></h1>
+
+       
+         <div class="btn-group">
+          <%= link_to 'Show', student, class: "btn btn-default" %>
+          <%= link_to 'Edit', edit_student_path(student), class: "btn btn-default" %>
+          <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+         </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Student', new_student_path, class: "btn btn-primary" %>

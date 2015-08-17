@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @student.name %>, <%= @student.age %></h1>
+
+<div class="btn-group">
+<%= link_to 'Edit', edit_student_path(@student), class: "btn btn-default" %> |
+<%= link_to 'Back', students_path, class: "btn btn-default" %>
+</div>
